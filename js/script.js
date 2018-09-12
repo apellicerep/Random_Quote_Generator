@@ -13,22 +13,22 @@ var quotes =[
     source:"William Shakespeare",
     tag:"Love"
 
-  }
+  },
   {
     quote:"Life is 20% what happens to you and 90% how you react it.",
     source:"Charles R. Swindoll",
     tag:"Motivational"
-  }
+  },
   {
     quote:"A dream doesn’t become reality through magic; it takes sweat, determination and hard work.",
     source:"Colin Powell",
     tag:"Work"
-  }
+  },
   {
     quote:"Luck is great, but most of life is hard work.",
     source:"Iain Duncan Smith",
     tag:"Work"
-  }
+  },
   {
     quote:"Ideas pull the trigger, but instinct loads the gun.",
     source:"Don Marquis",
@@ -37,8 +37,17 @@ var quotes =[
 ]
 
 
+// it gets a Random Object from the Array and return it.
 
-// Create the getRandomQuuote function and name it getRandomQuote
+function getRandomQuote(array){
+  var quoteToSend;
+  topRandomNumber = quotes.length; //I get length of the Array to be my top in my random function.
+  positionQuote = Math.floor(Math.random()*(topRandomNumber-1));
+  //method that returns random number between 0 and (topRandomNumber-1), I will use as a index of my Array of Objects.
+  quoteToSend = quotes[positionQuote];
+  return quoteToSend;
+}
+
 
 
 
