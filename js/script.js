@@ -40,7 +40,7 @@ var quotes =[
 // it gets a Random Object from the Array and return it.
 
 function getRandomQuote(array){
-  var quoteToSend;
+  var quoteToSend; // Quote Object that we will return.
   topRandomNumber = quotes.length; //I get length of the Array to be my top in my random function.
   positionQuote = Math.floor(Math.random()*(topRandomNumber));
   //method that returns random number between 0 and (topRandomNumber), I will use as a index of my Array of Objects.
@@ -60,13 +60,13 @@ function printQuote(){
       html += '<p class='+'"' + key + '"' + '>' + randomQuote[key] + '</p>';
     }
     else if (key ==="source"){
-      html += '<p class='+'"' + key + '"' + '>' + randomQuote[key] + '</p>';
+      html += '<p class='+'"' + key + '"' + '>' + randomQuote[key];
     }
     else {
-      html += '<span class='+'"' + key + '"' + '>' + randomQuote[key] + '</p>';
+      html += '<span class='+'"' + key + '"' + '>' + randomQuote[key] + '</span>';
     }
-  }
-  document.getElementById('quote-box').innerHTML = html;
+  }html +="</p>";
+  document.getElementById('quote-box').innerHTML = html; //print hmtl.
 }
 
 
