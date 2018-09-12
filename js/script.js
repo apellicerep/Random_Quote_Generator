@@ -42,17 +42,32 @@ var quotes =[
 function getRandomQuote(array){
   var quoteToSend;
   topRandomNumber = quotes.length; //I get length of the Array to be my top in my random function.
-  positionQuote = Math.floor(Math.random()*(topRandomNumber-1));
-  //method that returns random number between 0 and (topRandomNumber-1), I will use as a index of my Array of Objects.
+  positionQuote = Math.floor(Math.random()*(topRandomNumber));
+  //method that returns random number between 0 and (topRandomNumber), I will use as a index of my Array of Objects.
   quoteToSend = quotes[positionQuote];
   return quoteToSend;
 }
 
 
+// Get Quote Object from randomQuote generates html and print it.
 
-
-// Create the printQuote funtion and name it printQuote
-
+function printQuote(){
+  var randomQuote;
+  html = " "; //Sring that will be the html
+  randomQuote = getRandomQuote(quotes); //call function getRandomQuote and I save it.
+  for(key in randomQuote){ //loop inside Object while i'm buildin the html, if "quote or source" = <p> , else =<span>
+    if(key ==="quote"){
+      html += '<p class='+'"' + key + '"' + '>' + randomQuote[key] + '</p>';
+    }
+    else if (key ==="source"){
+      html += '<p class='+'"' + key + '"' + '>' + randomQuote[key] + '</p>';
+    }
+    else {
+      html += '<span class='+'"' + key + '"' + '>' + randomQuote[key] + '</p>';
+    }
+  }
+  document.getElementById('quote-box').innerHTML = html;
+}
 
 
 // This event listener will respond to "Show another quote" button clicks

@@ -54,11 +54,11 @@ body {
   content: "—";
 }
 
-.citation {
+.tag { //I changed citation per tag
   font-style: italic;
 }
 
-.citation:before {
+.tag:before { //I changed citation per tag.
   content: ", ";
   font-style: normal;
 }
